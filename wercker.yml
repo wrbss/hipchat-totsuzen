@@ -1,0 +1,22 @@
+box: wrbss/testing-php5.5:0.9
+
+build:
+  steps:
+    - script:
+        name: CentOS version
+        code: |-
+            echo "CentOS version: $(cat /etc/redhat-release)"
+    - script:
+        name: PHP version
+        code: |-
+            echo "php version: $(php --version)"
+    - script:
+        name: update composer dependencies
+        code: |-
+            composer update --no-interaction
+- script:
+        name: mysql version
+        code: |-
+            echo "mysql version: $(mysql --version)"
+    - mbrevda/php-lint:
+        directory: app
