@@ -14,7 +14,7 @@ build:
         name: update composer dependencies
         code: |-
             composer update --no-interaction
-- script:
+    - script:
         name: mysql version
         code: |-
             echo "mysql version: $(mysql --version)"
