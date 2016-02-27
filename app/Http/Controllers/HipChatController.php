@@ -29,6 +29,8 @@ class HipChatController extends Controller
         }
 
         $message = preg_replace('/^\/[a-zA-Z0-9]*\s/', '', $message);
+        $message str_replace('\r\n', $message);
+
         $msg_length = mb_strwidth($message) / 2;
 
         $response_message = '__' . str_repeat('人', $msg_length + 2) . '__<br />'
@@ -47,7 +49,7 @@ class HipChatController extends Controller
     {
         return response()->json([
             'color' => 'red',
-            'message' => 'Sorry. Something weng wrong.',
+            'message' => 'Sorry. Something went wrong.',
             'notify' => false,
             'message_format' => 'text'
         ]);
