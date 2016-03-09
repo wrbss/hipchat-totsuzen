@@ -15,4 +15,8 @@ $app->get('/', function () use ($app) {
     return 'POST /totsuzen from HipChat Integration';
 });
 
+$app->get('/totsuzen', function() {
+    return 'set this URL to your own HipChat Integration';
+});
+
 $app->post('/totsuzen', 'HipChatController@totsuzen');
