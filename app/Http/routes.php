@@ -11,6 +11,10 @@
 |
 */
 
+$app->get('/test', function () use ($app) {
+    return 'test';
+});
+
 $app->get('/', function () use ($app) {
     return 'POST /totsuzen from HipChat Integration';
 });
